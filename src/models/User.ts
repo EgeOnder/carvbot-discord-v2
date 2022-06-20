@@ -1,11 +1,17 @@
 import { Schema, model } from 'mongoose';
-import { UserInterface } from '../types/UserInterface';
 
-export const User = new Schema({
+export interface UserInterface {
+	discordId: string;
+	points: number;
+	created_at: Date;
+	updated_at: Date;
+}
+
+const userSchema = new Schema({
 	discord_id: String,
 	points: Number,
 	created_at: { type: Date, default: Date.now },
 	updated_at: { type: Date, default: Date.now },
 });
 
-export default model<UserInterface>('user', User);
+export default model<UserInterface>('User', userSchema);
