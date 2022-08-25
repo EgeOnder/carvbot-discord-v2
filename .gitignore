@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Secret key
+carvbot-discord-6f11093eca88.json

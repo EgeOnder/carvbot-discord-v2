@@ -4,6 +4,9 @@
 	"repository": "https://github.com/EgeOnder/carvbot-discord-v2.git",
 	"author": "Ege Önder <40398628+EgeOnder@users.noreply.github.com>",
 	"license": "MIT",
+	"engines": {
+		"node": "18.8.0"
+	},
 	"scripts": {
 		"lint": "eslint . --ext .ts",
 		"watch": "tsc -w",

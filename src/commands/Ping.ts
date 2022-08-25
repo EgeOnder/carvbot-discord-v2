@@ -1,5 +1,4 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
-import { getUserData } from '../utils/getUserData';
 import { Command } from '../types/Command';
 import { MessageEmbed } from 'discord.js';
 
@@ -19,13 +18,10 @@ export const Ping: Command = {
 		const { user } = interaction;
 		const text = interaction.options.getString('message', true);
 
-		const targetUser = await getUserData(user.id);
-
 		const userInfoEmbed = new MessageEmbed()
 			.setTitle('User Info')
 			.setDescription(text)
-			.setAuthor({ name: user.tag, iconURL: user.displayAvatarURL() })
-			.addField('Points', targetUser.points.toString());
+			.setAuthor({ name: user.tag, iconURL: user.displayAvatarURL() });
 
 		await interaction.editReply({ embeds: [userInfoEmbed] });
 	},
